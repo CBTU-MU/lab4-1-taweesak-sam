@@ -6,8 +6,13 @@ def homework():
     from sklearn.datasets import load_iris
     iris = load_iris()
     scoreModel = None
-    # YOUR CODE HERE
+    y = iris.target 
+    X = iris.data
 
+    from sklearn.tree import DecisionTreeClassifier
+    dt = DecisionTreeClassifier(random_state=0)
+    dt.fit(X,y)
+    scoreModel = dt.score(X,y)
     return scoreModel
 
 
